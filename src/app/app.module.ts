@@ -7,19 +7,26 @@ import { NavComponent } from './lib/components/nav/nav.component';
 import { TitleComponent } from './lib/components/nav/title.component';
 import { HomeComponent } from './views/home/home.component';
 import { FooterComponent } from './lib/components/footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './views/not-found/not-found.component';
+import { OperationsComponent } from './views/operations/operations.component';
+import { OperationsModule } from './views/operations/operations.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    ComponentsModule
+    ComponentsModule,
+    AppRoutingModule,
+    OperationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HomeComponent]
+  exports: [HomeComponent, NotFoundComponent]
 })
 export class AppModule { }
